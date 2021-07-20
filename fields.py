@@ -3,27 +3,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-filename = "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
+filename = input("Input CDF filepath")
 file = cdflib.CDF(filename)
-rData = []
-zData = [] #Each variable is a list, containing indexes for each record. The variable lists are each indexes in the zData[] list.
-txt = open("./output.txt", "w")
 
-def readvariables(listname, vartype):
+def readvariables(vartype):
     """Sort data into lists, only meant for rVariables and zVariables.
-    For vartype input r or z.
-    listname is meant for the list to save to."""
+    For vartype input r or z."""
+    returnlist = [] #returns this list
     for i in file.cdf_info().get(vartype + "Variables"):
         try:
             print(i + " " + str(file.varinq(i).get("Last_Rec"))) #Print name of variable and number of records
-            listname.append([i])
+            returnlist.append([])
             for j in range(file.varinq(i).get("Last_Rec")):
-                listname[file.cdf_info().get(vartype + "Variables").index(i)].append(file.varget(i,startrec=j,endrec=j+1).tolist())
+                returnlist[file.cdf_info().get(vartype + "Variables").index(i)].append(file.varget(i,startrec=j,endrec=j+1).tolist())
                 #Append data to the right list and right index
         except ValueError:
             print("No records found") #In case there are no records
             continue
-    txt.write(vartype + "Variables: " + str(listname))
+    return returnlist
 
 def filenames_get(name_list_file):
   '''
@@ -90,15 +87,15 @@ def import_jdata(filename): #irrelevant?? uses mms_curlometer script in the modu
 # readvariables(rData, "r")
 # txt.close()
 
-times = get_cdf_var(filename, ["mms1_edp_epoch_brst_l2"])
-data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])
+times = get_cdf_var(filename, ["mms1_edp_epoch_brst_l2"])[0]
+data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
 
-print(len(times[0]))
-print(len(data[0]))
+print(len(times))
+print(len(data))
 
 #data sets as arrays
-x = times[0]
-y = data[0]
+x = times
+y = data
 
 #add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
 fig = plt.figure()
