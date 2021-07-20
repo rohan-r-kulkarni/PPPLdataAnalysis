@@ -3,13 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-filename = input("Input CDF filepath")
-file = cdflib.CDF(filename)
+filepath = input("Input CDF filepath")
 
-def readvariables(vartype):
+def readvariables(vartype, filename):
     """Sort data into lists, only meant for rVariables and zVariables.
     For vartype input r or z."""
     returnlist = [] #returns this list
+    file = cdflib.CDF(filename)
     for i in file.cdf_info().get(vartype + "Variables"):
         try:
             print(i + " " + str(file.varinq(i).get("Last_Rec"))) #Print name of variable and number of records
@@ -21,6 +21,12 @@ def readvariables(vartype):
             print("No records found") #In case there are no records
             continue
     return returnlist
+
+def getVarNames(vartype, filename):
+    """Returns a list of all variables of r or z type (depending on input)
+    Vartype should be a string either 'r' or 'z' """
+    file = cdflib.CDF(filename)
+    return file.cdf_info().get(vartype + "Variables")
 
 def filenames_get(name_list_file):
   '''
@@ -87,21 +93,17 @@ def import_jdata(filename): #irrelevant?? uses mms_curlometer script in the modu
 # readvariables(rData, "r")
 # txt.close()
 
-times = get_cdf_var(filename, ["mms1_edp_epoch_brst_l2"])[0]
-data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
+times = get_cdf_var(filepath, ["mms1_edp_epoch_brst_l2"])[0]
+data = get_cdf_var(filepath, ["mms1_edp_scpot_brst_l2"])[0]
 
 print(len(times))
 print(len(data))
-
-#data sets as arrays
-x = times
-y = data
 
 #add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
 fig = plt.figure()
 # ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
-plt.plot(x,y,'-')
+plt.plot(times,data,'-')
 
 # ax.set_title("E Field")
 # ax.set_xlabel('Epoch')
