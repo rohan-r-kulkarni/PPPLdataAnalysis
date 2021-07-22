@@ -2,8 +2,12 @@ import cdflib
 import numpy as np
 import matplotlib.pyplot as plt
 import math
+import datetime
 
-filename = input("Input CDF filepath")
+filename = "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
+#fgm: "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
+#edp: "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
+
 file = cdflib.CDF(filename)
 
 def readvariables(vartype):
@@ -87,11 +91,29 @@ def import_jdata(filename): #irrelevant?? uses mms_curlometer script in the modu
 # readvariables(rData, "r")
 # txt.close()
 
-times = get_cdf_var(filename, ["mms1_edp_epoch_brst_l2"])[0]
-data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
+print("Epoch:")
+raw_times = get_cdf_var(filename, ["Epoch"])[0]
+times = []
 
-print(len(times))
-print(len(data))
+for i in range(0,len(raw_times)):
+    epoch_sec = int(raw_times[i]/1000000000)
+    delta = datetime.timedelta(seconds=946684800)
+
+    formatted_time = datetime.datetime.fromtimestamp(epoch_sec)# + delta
+
+    times.append(formatted_time)
+
+for i in range(0, len(times)):
+    print(times[i])
+
+print()
+
+# print("Data:")
+raw_data = get_cdf_var(filename, ["mms1_fgm_b_gsm_brst_l2"])[0]
+data = []
+#only Bx Data
+for i in range(0,len(raw_data)):
+    data.append(raw_data[i][0])
 
 #data sets as arrays
 x = times
@@ -106,4 +128,4 @@ plt.plot(x,y,'-')
 # ax.set_title("E Field")
 # ax.set_xlabel('Epoch')
 # ax.set_ylabel('E Field')
-plt.show()
+# plt.show()
