@@ -5,10 +5,7 @@ import math
 import datetime
 
 filename = "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
-#fgm: "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
-#edp: "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
 
-filename = "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
 file = cdflib.CDF(filename)
 
 def readvariables(vartype):
@@ -66,43 +63,28 @@ def get_cdf_var(filename,varnames):
       data.append(var_data)
   return data
 
-def import_jdata(filename): #irrelevant?? uses mms_curlometer script in the module...not using here
-  '''
-  Imports current density data outputted from the mms_curlometer script.
-  Format is time (string format),jx,jy,jz (A)
-  Inputs:
-      filename- string of the complete path to the specified file
-  Outputs:
-      time- numpy array of datetime objects
-      j_data- numpy array of j data (jx,jy,jz) in microAmps
-  TODO: this is slow. Consider putting the jdata into CDF instead of text
-      form, or format the datetime outputs so that it isn't necessary to use
-      'parse', which I imagine is inefficient
-  '''
-  amps_2_uamps=1e6
-  time_str=np.loadtxt(filename,delimiter=',',usecols=[0],dtype="str")
-  j_data=np.loadtxt(filename,delimiter=',',usecols=range(1,4))*amps_2_uamps
-  time_clean=[]
-  for t in time_str:
-      time_clean.append(t)
-  time=np.array(time_clean)
-  return time,j_data
-
 # readvariables(zData, "z")
 # readvariables(rData, "r")
 # txt.close()
 
-print("Epoch:")
 raw_times = get_cdf_var(filename, ["Epoch"])[0]
 times = []
 
-for i in range(0,len(raw_times)):
-    epoch_sec = int(raw_times[i]/1000000000)
-    delta = datetime.timedelta(seconds=946684800)
+start_minute = 18
+start_sec = 25
+stop_sec = 41
 
-    formatted_time = datetime.datetime.fromtimestamp(epoch_sec)# + delta
+for i in range(0, len(raw_times)):
+    new_time = cdflib.epochs.CDFepoch.to_datetime(raw_times[i])[0]
 
-    times.append(formatted_time)
+    #set time contraints
+    if new_time.minute == start_minute and new_time.second == start_sec:
+        start_index = i
+    if new_time.minute == start_minute and new_time.second == stop_sec:
+        stop_index = i
+    if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
+        new_timeF = new_time.strftime("%H:%M:%S")
+        times.append(new_timeF)
 
 for i in range(0, len(times)):
     print(times[i])
@@ -117,16 +99,25 @@ for i in range(0,len(raw_data)):
     data.append(raw_data[i][0])
 
 #data sets as arrays
-x = times
-y = data
+x = raw_times[start_index:stop_index]
+# x = times
+y = data[start_index:stop_index]
 
-#add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
 fig = plt.figure()
-# ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
+ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
-plt.plot(x,y,'-')
+#modify x labels
 
-# ax.set_title("E Field")
-# ax.set_xlabel('Epoch')
-# ax.set_ylabel('E Field')
-# plt.show()
+# ax.set_xticklabels(times)
+# ax.set_xticks(x)
+# ax.set_xticklabels(labels)
+# ax.set_xticks(raw_times[start_index:stop_index:100])
+# ax.set_xticklabels(times[start_index:stop_index:100])
+
+ax.plot(x,y,'-')
+fig.autofmt_xdate()
+
+plt.title("FGM B Field Plot")
+plt.xlabel('Epoch')
+plt.ylabel('B Field')
+plt.show()

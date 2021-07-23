@@ -5,8 +5,6 @@ import math
 import datetime
 
 filename = "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
-#fgm: "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
-#edp: "./20170810data/mms1/edp/mms1_edp_brst_l2_scpot_20170810121733_v2.4.0.cdf"
 
 rData = []
 zData = []
@@ -28,6 +26,24 @@ def readvariables(vartype):
             print("No records found") #In case there are no records
             continue
     return returnlist
+
+def filenames_get(name_list_file):
+  '''
+  Pulls list of filenames I'm using from the file where they are stored.
+  Allows some flexibility
+  Inputs:
+      name_list_file- string which constains the full path to the file which
+          contains a list of the full filename paths needed
+  Outputs:
+      name_list- list of strings which contain the full path to
+          each file
+  '''
+  name_list=[]
+  with open(name_list_file,"r") as name_file_obj: #read-only access
+       for line in name_file_obj:
+           line_clean =line.rstrip('\n') #removes newline chars from lines
+           name_list.append(line_clean)
+  return name_list
 
 def get_cdf_var(filename,varnames):
   """
@@ -54,15 +70,19 @@ raw_times = get_cdf_var(filename, ["mms1_edp_epoch_brst_l2"])[0]
 
 times = []
 
+start_minute = 18
+start_sec = 25
+stop_sec = 41
+
 for i in range(0, len(raw_times)):
     new_time = cdflib.epochs.CDFepoch.to_datetime(raw_times[i])[0]
 
     #set time contraints
-    if new_time.minute == 18 and new_time.second == 20:
+    if new_time.minute == start_minute and new_time.second == start_sec:
         start_index = i
-    if new_time.minute == 18 and new_time.second == 50:
+    if new_time.minute == start_minute and new_time.second == stop_sec:
         stop_index = i
-    if new_time.minute == 18 and new_time.second >= 20 and new_time.second < 50:
+    if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
         new_timeF = new_time.strftime("%H:%M:%S")
         times.append(new_timeF)
 
@@ -72,7 +92,8 @@ data = raw_data
 
 
 #data sets as arrays
-x = times
+x = raw_times[start_index:stop_index]
+#x = times
 y = data[start_index:stop_index]
 
 #add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
@@ -81,7 +102,7 @@ fig = plt.figure()
 plt.plot(x,y,'-')
 fig.autofmt_xdate()
 
-plt.title("E Field Plot")
+plt.title("EDP E Field Plot")
 plt.xlabel('Epoch')
 plt.ylabel('E Field')
 plt.show()
