@@ -92,8 +92,10 @@ for i in range(0, len(times)):
 print()
 
 # print("Data:")
+#use GSE (elliptical) or GSM (magnetospheric)
 raw_data = get_cdf_var(filename, ["mms1_fgm_b_gsm_brst_l2"])[0]
 data = []
+
 #only Bx Data
 for i in range(0,len(raw_data)):
     data.append(raw_data[i][0])
@@ -107,7 +109,6 @@ fig = plt.figure()
 ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
 #modify x labels
-
 # ax.set_xticklabels(times)
 # ax.set_xticks(x)
 # ax.set_xticklabels(labels)

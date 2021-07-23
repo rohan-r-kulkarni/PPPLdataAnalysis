@@ -74,6 +74,7 @@ start_minute = 18
 start_sec = 25
 stop_sec = 41
 
+#linear search, make it binary search
 for i in range(0, len(raw_times)):
     new_time = cdflib.epochs.CDFepoch.to_datetime(raw_times[i])[0]
 
