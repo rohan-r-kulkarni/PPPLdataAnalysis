@@ -75,65 +75,66 @@ start_minute = 18
 start_sec = 25
 stop_sec = 41
 
-# ERROR = 90*pow(10, 9) #90 sec ERROR
+ERROR = 90*pow(10, 9) #90 sec ERROR
 
-# def binary_search(y, m, d, hour, min):
-#     low = 0
-#     high = len(raw_times)-1
-#     while (low <= high):
-#         mid = int((low+high)/2)
-#         midTime = cdflib.epochs.CDFepoch.to_datetime(raw_times[mid])[0]
-#         if midTime.year == y and midTime.month == m and midTime.day == d and midTime.minute == min and midTime.hour == hour:
-#                 return mid
-#         elif midTime.minute < min:
-#                 low = mid+1
-#         else:
-#             high = mid-1
-#     return -1
-#
-# target = [2017,8,10,12,18,20]
-# targetEPOCH = cdflib.epochs.CDFepoch.compute_tt2000(target)
-# print(targetEPOCH)
-#
-# beginSearching = binary_search(2017, 8, 10, 12, 18)
-# endSearching = binary_search(2017, 8, 10, 12, 19)
-#
-# print()
-#
-# print(beginSearching)
-# print(endSearching)
+def binary_search(y, m, d, hour, min, sec):
+    low = 0
+    high = len(raw_times)-1
+    while (low <= high):
+        mid = int((low+high)/2)
+        midTime = cdflib.epochs.CDFepoch.to_datetime(raw_times[mid])[0]
+        if midTime.year == y and midTime.month == m and midTime.day == d and midTime.minute == min and midTime.hour == hour:
+            if midTime.second == sec:
+                return mid
+            elif midTime.minute < min:
+                low = mid+1
+            else:
+                high = mid-1
+    return -1
+
+target = [2017,8,10,12,18,20]
+targetEPOCH = cdflib.epochs.CDFepoch.compute_tt2000(target)
+print(targetEPOCH)
+
+beginSearching = binary_search(2017, 8, 10, 12, 18, 20)
+endSearching = binary_search(2017, 8, 10, 12, 19, 50)
+
+print()
+
+print(beginSearching)
+print(endSearching)
 
 #linear search, make it binary search
-for i in range(0, len(raw_times)):
-    new_time = cdflib.epochs.CDFepoch.to_datetime(raw_times[i])[0]
-
-    #set time contraints
-    if new_time.minute == start_minute and new_time.second == start_sec:
-        start_index = i
-    if new_time.minute == start_minute and new_time.second == stop_sec:
-        stop_index = i
-    if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
-        new_timeF = new_time.strftime("%H:%M:%S")
-        times.append(new_timeF)
+# for i in range(0, len(raw_times)):
+#     new_time = cdflib.epochs.CDFepoch.to_datetime(raw_times[i])[0]
+#
+#     #set time contraints
+#     if new_time.minute == start_minute and new_time.second == start_sec:
+#         start_index = i
+#     if new_time.minute == start_minute and new_time.second == stop_sec:
+#         stop_index = i
+#     if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
+#         new_timeF = new_time.strftime("%H:%M:%S")
+#         times.append(new_timeF)
 #
 print(times)
-raw_data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
-data = raw_data
+# raw_data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
+# data = raw_data
 
 
 
 #data sets as arrays
-x = raw_times[start_index:stop_index]
-#x = times
-y = data[start_index:stop_index]
-
-#add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
-fig = plt.figure()
-
-plt.plot(x,y,'-')
-fig.autofmt_xdate()
-
-plt.title("EDP E Field Plot")
-plt.xlabel('Epoch')
-plt.ylabel('E Field')
-plt.show()
+# x = raw_times[start_index:stop_index]
+# #x = times
+# y = data[start_index:stop_index]
+#
+# #add figure from canvas coordinates (0.1, 0,1) to (0.9,0.9)
+# fig = plt.figure()
+#
+# plt.plot(x,y,'-')
+# fig.autofmt_xdate()
+#
+# plt.title("EDP E Field Plot")
+# plt.xlabel('Epoch')
+# plt.ylabel('E Field')
+# plt.show()
