@@ -6,9 +6,9 @@ import datetime
 from scipy.fft import fft, ifft
 
 filenames = ["./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
-filenames.append("./20170810data/mms2/fgm/mms2_fgm_brst_l2_20170810121733_v5.99.0.cdf")
-filenames.append("./20170810data/mms3/fgm/mms3_fgm_brst_l2_20170810121733_v5.99.0.cdf")
-filenames.append("./20170810data/mms4/fgm/mms4_fgm_brst_l2_20170810121733_v5.99.0.cdf")
+filenames.append("./20170810data/mms2/fgm/mms2_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
+filenames.append("./20170810data/mms3/fgm/mms3_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
+filenames.append("./20170810data/mms4/fgm/mms4_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
 
 def readvariables(vartype):
     """Sort data into lists, only meant for rVariables and zVariables.
@@ -89,8 +89,8 @@ for i in range(0, len(raw_times)):
     if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
         times.append(raw_times[i])
 
-#for i in range(0, len(times)):
-    #print(times[i])
+for i in range(0, len(times)):
+    print(times[i])
 
 num_of_ticks = 17
 tick_indexes = []
@@ -105,25 +105,23 @@ for x in range(num_of_ticks):
 
 # print("Data:")
 #use GSE (elliptical) or GSM (magnetospheric)
-raw_data = [get_cdf_var(filenames[0], ["mms1_fgm_b_gsm_brst_l2"])[0], get_cdf_var(filenames[1], ["mms2_fgm_b_gsm_brst_l2"])[0], get_cdf_var(filenames[2], ["mms3_fgm_b_gsm_brst_l2"])[0], get_cdf_var(filenames[3], ["mms4_fgm_b_gsm_brst_l2"])[0]]
-data = [[],[],[],[]]
+raw_data = get_cdf_var(filename, ["mms1_fgm_b_gsm_brst_l2"])[0]
+data = []
 
 #only Bx Data
-for j in range(4):
-    for i in range(0,len(raw_data[j])):
-        data[j].append(raw_data[j][i][0])
+for i in range(0,len(raw_data)):
+    data.append(raw_data[i][0])
+
+#data sets as arrays
+x = raw_times[start_index:stop_index]
+# x = times
+y = data[start_index:stop_index]
 
 fig = plt.figure()
 ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
-#data sets as arrays
-x = raw_times[start_index:stop_index]
-for i in range(0, len(raw_data)):
-    y = data[i][start_index:stop_index]
-    ax.plot(x, y, ',-')
-
-ax.set_xticks(tick_indexes)
-ax.set_xticklabels(tick_values)
+ax.plot(x,y,'-')
+fig.autofmt_xdate()
 
 plt.title("FGM B Field Plot")
 plt.xlabel('Epoch')
