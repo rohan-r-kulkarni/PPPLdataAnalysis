@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import datetime
-from scipy.fft import fft, ifft
+from scipy.fft import fftshift, fftfreq, fft
 
 filename = "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
 
@@ -87,11 +87,6 @@ for i in range(0, len(raw_times)):
         new_timeF = new_time.strftime("%H:%M:%S")
         times.append(new_timeF)
 
-for i in range(0, len(times)):
-    print(times[i])
-
-print()
-
 # print("Data:")
 #use GSE (elliptical) or GSM (magnetospheric)
 raw_data = get_cdf_var(filename, ["mms1_fgm_b_gsm_brst_l2"])[0]
@@ -101,13 +96,13 @@ data = []
 for i in range(0,len(raw_data)):
     data.append(raw_data[i][0])
 
-#data sets as arrays
+#data sets as arrays, #len = 2048
 x = raw_times[start_index:stop_index]
 # x = times
 y = data[start_index:stop_index]
 
-fig = plt.figure()
-ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
+fig1 = plt.figure(1)
+ax = fig1.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
 #modify x labels
 # ax.set_xticklabels(times)
@@ -117,9 +112,23 @@ ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 # ax.set_xticklabels(times[start_index:stop_index:100])
 
 ax.plot(x,y,'-')
-fig.autofmt_xdate()
+fig1.autofmt_xdate()
 
 plt.title("FGM B Field Plot")
 plt.xlabel('Epoch')
 plt.ylabel('B Field')
+
+# #FFT Plot
+N = len(x)
+
+# # sample spacing
+T = 1.0 / N
+
+yf = fftshift(fft(y))
+xf = fftshift(fftfreq(N, T))
+
+fig2 = plt.figure(2)
+plt.plot(xf, 1.0/N * np.abs(yf))
+plt.grid()
+
 plt.show()

@@ -119,6 +119,8 @@ print(endSearching)
 #
 print(times)
 # raw_data = get_cdf_var(filename, ["mms1_edp_scpot_brst_l2"])[0]
+#INSTEAD, USE "mms1_edp_dce_gse_brst_l2" #in elliptical coordinates, ExEyEz
+
 # data = raw_data
 
 
