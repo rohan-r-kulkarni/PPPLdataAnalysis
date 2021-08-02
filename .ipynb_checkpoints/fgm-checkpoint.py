@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import datetime
-from scipy.fft import fftshift, fftfreq, fft
+from scipy.fft import fft, ifft
 
-filename = "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
-
-file = cdflib.CDF(filename)
+filenames = ["./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
+filenames.append("./20170810data/mms2/fgm/mms2_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
+filenames.append("./20170810data/mms3/fgm/mms3_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
+filenames.append("./20170810data/mms4/fgm/mms4_fgm_brst_l2_20170810121733_v5.99.0.cdf"]
 
 def readvariables(vartype):
     """Sort data into lists, only meant for rVariables and zVariables.
@@ -68,7 +69,7 @@ def get_cdf_var(filename,varnames):
 # readvariables(rData, "r")
 # txt.close()
 
-raw_times = get_cdf_var(filename, ["Epoch"])[0]
+raw_times = get_cdf_var(filenames[0], ["Epoch"])[0]
 times = []
 
 start_minute = 18
@@ -81,11 +82,26 @@ for i in range(0, len(raw_times)):
     #set time contraints
     if new_time.minute == start_minute and new_time.second == start_sec:
         start_index = i
+        start_nano = raw_times[i]
     if new_time.minute == start_minute and new_time.second == stop_sec:
         stop_index = i
+        stop_nano = raw_times[i]
     if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
-        new_timeF = new_time.strftime("%H:%M:%S")
-        times.append(new_timeF)
+        times.append(raw_times[i])
+
+for i in range(0, len(times)):
+    print(times[i])
+
+num_of_ticks = 17
+tick_indexes = []
+tick_values = np.linspace(start_sec, stop_sec, num_of_ticks).tolist()
+
+distance_between_ticks = math.floor((len(times)/(num_of_ticks-1)))
+for x in range(num_of_ticks):
+    if distance_between_ticks*x >= 1:
+        tick_indexes.append(times[distance_between_ticks*x-1])
+    else:
+        tick_indexes.append(times[distance_between_ticks*x])
 
 # print("Data:")
 #use GSE (elliptical) or GSM (magnetospheric)
@@ -96,37 +112,18 @@ data = []
 for i in range(0,len(raw_data)):
     data.append(raw_data[i][0])
 
-#data sets as arrays, #len = 2048
+#data sets as arrays
 x = raw_times[start_index:stop_index]
 # x = times
 y = data[start_index:stop_index]
 
-fig1 = plt.figure(1)
-ax = fig1.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
-
-#modify x labels
-# ax.set_xticklabels(times)
-# ax.set_xticks(x)
-# ax.set_xticklabels(labels)
-# ax.set_xticks(raw_times[start_index:stop_index:100])
-# ax.set_xticklabels(times[start_index:stop_index:100])
+fig = plt.figure()
+ax = fig.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
 ax.plot(x,y,'-')
-fig1.autofmt_xdate()
+fig.autofmt_xdate()
 
 plt.title("FGM B Field Plot")
 plt.xlabel('Epoch')
 plt.ylabel('B Field')
-
-# #FFT Plot
-N = len(x)
-T = 1.0 / N
-
-yf = fftshift(fft(y))
-xf = fftshift(fftfreq(N, T))
-
-fig2 = plt.figure(2)
-plt.plot(xf, 1.0/N * np.abs(yf))
-plt.grid()
-
 plt.show()
