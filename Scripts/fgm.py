@@ -5,7 +5,7 @@ import math
 import datetime
 from scipy.fft import fftshift, fftfreq, fft
 
-filename = "./20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
+filename = "../20170810data/mms1/fgm/mms1_fgm_brst_l2_20170810121733_v5.99.0.cdf"
 
 file = cdflib.CDF(filename)
 
