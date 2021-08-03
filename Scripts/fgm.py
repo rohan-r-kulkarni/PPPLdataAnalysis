@@ -106,7 +106,21 @@ def getData(file, timeInterval):
 
     return x, y
 
+def getFFTdata(x, y):
+    N = len(x)
+    T = 1.0 / N
 
+    #average value
+    sum = 0
+    for i in range(0, N):
+        sum += y[i]
+
+    average = sum/N
+
+    yf = fftshift(fft(y-average))
+    xf = fftshift(fftfreq(N, T))
+
+    return xf, yf, N
 
 period = [18, 31, 18, 36] #start min/sec, stop min/sec
 
@@ -115,39 +129,43 @@ MMS2x, MMS2y = getData(files[1], period)
 MMS3x, MMS3y = getData(files[2], period)
 MMS4x, MMS4y = getData(files[3], period)
 
-
+#Bx-Field
 fig1 = plt.figure(1)
-ax = fig1.add_axes([0.1,0.1,0.8,0.8]) #(x, y, len, wid)
 
-s1 =ax.plot(MMS1x , MMS1y, '-k')
-s2 = ax.plot(MMS2x , MMS2y, '-r')
-s3 = ax.plot(MMS3x , MMS3y, '-g')
-s4 = ax.plot(MMS4x , MMS4y, '-b')
-
+s1 = plt.plot(MMS1x , MMS1y, '-k')
+s2 = plt.plot(MMS2x , MMS2y, '-r')
+s3 = plt.plot(MMS3x , MMS3y, '-g')
+s4 = plt.plot(MMS4x , MMS4y, '-b')
 
 fig1.autofmt_xdate()
 
-ax.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
+plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right')
 plt.title("FGM Bx Field Plot")
 plt.xlabel('Epoch')
 plt.ylabel('Bx Field')
 
-# #FFT Plot
-# N = len(x)
-# T = 1.0 / N
-#
-# #average value
-# sum = 0
-# for i in range(0, N):
-#     sum += data[start_index+i]
-#
-# average = sum/N
-#
-# yf = fftshift(fft(y-average))
-# xf = fftshift(fftfreq(N, T))
-#
-# fig2 = plt.figure(2)
-# plt.plot(xf, 1.0/N * np.abs(yf))
-# plt.grid()
+MMS1xf, MMS1yf, MMS1N = getFFTdata(MMS1x, MMS1y)
+MMS2xf, MMS2yf, MMS2N = getFFTdata(MMS2x, MMS2y)
+MMS3xf, MMS3yf, MMS3N = getFFTdata(MMS3x, MMS3y)
+MMS4xf, MMS4yf, MMS4N = getFFTdata(MMS4x, MMS4y)
+
+
+#FFT
+fig2 = plt.figure(2)
+plt.plot(MMS1xf, 1.0/MMS1N * np.abs(MMS1yf), '-k')
+plt.plot(MMS2xf, 1.0/MMS2N * np.abs(MMS2yf),'-r')
+plt.plot(MMS3xf, 1.0/MMS3N * np.abs(MMS3yf), '-g')
+plt.plot(MMS4xf, 1.0/MMS4N * np.abs(MMS4yf), '-b')
+
+plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
+plt.title("FGM Bx Field FFT")
+plt.xlabel('Frequency')
+plt.ylabel('Amplitude')
+
+#set FFT window
+plt.xlim([0, 20])
+plt.ylim([0, 2])
+
+plt.grid()
 
 plt.show()
