@@ -174,7 +174,7 @@ def FGManalysis(period, ppObj, title, FFTtitle):
 
 period = [] #start min, start sec, stop min, stop sec
 
-pdf = PdfPages("./plotResults.pdf")
+pdf = PdfPages("./FGMplotResults.pdf")
 
 FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
 FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
