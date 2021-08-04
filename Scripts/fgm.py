@@ -142,7 +142,7 @@ def FGManalysis(period, plotPath, FFTpath):
     plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right')
     plt.title("FGM Bx Field Plot")
     plt.xlabel('Epoch')
-    plt.ylabel('Bx Field')
+    plt.ylabel('Bx Field (nT)')
 
     MMS1xf, MMS1yf, MMS1N = getFFTdata(MMS1x, MMS1y)
     MMS2xf, MMS2yf, MMS2N = getFFTdata(MMS2x, MMS2y)
@@ -160,7 +160,7 @@ def FGManalysis(period, plotPath, FFTpath):
 
     plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
     plt.title("FGM Bx Field FFT")
-    plt.xlabel('Frequency')
+    plt.xlabel('Frequency (Hz)')
     plt.ylabel('Amplitude')
 
     #set FFT window
