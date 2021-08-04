@@ -1,6 +1,7 @@
 import cdflib
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 import math
 import datetime
 from scipy.fft import fftshift, fftfreq, fft
@@ -86,7 +87,7 @@ def getData(file, timeInterval):
         #set time contraints
         if new_time.minute == start_minute and new_time.second == start_sec:
             start_index = i
-        if new_time.minute == start_minute and new_time.second == stop_sec:
+        if new_time.minute == stop_minute and new_time.second == stop_sec:
             stop_index = i
         if new_time.minute == start_minute and new_time.second >= start_sec and new_time.second < stop_sec:
             new_timeF = new_time.strftime("%H:%M:%S")
@@ -122,7 +123,7 @@ def getFFTdata(x, y):
 
     return xf, yf, N
 
-def FGManalysis(period, plotPath, FFTpath):
+def FGManalysis(period, ppObj, title, FFTtitle):
 
     MMS1x, MMS1y = getData(files[0], period)
     MMS2x, MMS2y = getData(files[1], period)
@@ -140,7 +141,7 @@ def FGManalysis(period, plotPath, FFTpath):
     fig1.autofmt_xdate()
 
     plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right')
-    plt.title("FGM Bx Field Plot")
+    plt.title(title)
     plt.xlabel('Epoch')
     plt.ylabel('Bx Field (nT)')
 
@@ -148,8 +149,6 @@ def FGManalysis(period, plotPath, FFTpath):
     MMS2xf, MMS2yf, MMS2N = getFFTdata(MMS2x, MMS2y)
     MMS3xf, MMS3yf, MMS3N = getFFTdata(MMS3x, MMS3y)
     MMS4xf, MMS4yf, MMS4N = getFFTdata(MMS4x, MMS4y)
-
-    plt.savefig(plotPath)
 
     #FFT
     fig2 = plt.figure(2)
@@ -159,25 +158,30 @@ def FGManalysis(period, plotPath, FFTpath):
     plt.plot(MMS4xf, 1.0/MMS4N * np.abs(MMS4yf), '-b')
 
     plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
-    plt.title("FGM Bx Field FFT")
+    plt.title(FFTtitle)
     plt.xlabel('Frequency (Hz)')
     plt.ylabel('Amplitude')
 
     #set FFT window
     plt.xlim([0, 20])
-    plt.ylim([0, 5])
+    plt.ylim([0, 4])
 
     plt.grid()
-    plt.savefig(FFTpath)
 
+    pdf.savefig(fig1)
+    pdf.savefig(fig2)
     plt.close('all')
 
 period = [] #start min, start sec, stop min, stop sec
 
-FGManalysis([18, 29, 18, 37], "./FGMresults/period.png", "./FGMresults/periodFFT.png")
-FGManalysis([18, 29, 18, 33], "./FGMresults/1-2period.png", "./FGMresults/1-2periodFFT.png")
-FGManalysis([18, 33, 18, 37], "./FGMresults/2-2period.png", "./FGMresults/2-2periodFFT.png")
-# FGManalysis([18, 29, 18, 31], "./FGMresults/1-4period.png", "./FGMresults/1-4periodFFT.png")
-# FGManalysis([18, 31, 18, 33], "./FGMresults/2-4period.png", "./FGMresults/2-4periodFFT.png")
-# FGManalysis([18, 33, 18, 35], "./FGMresults/3-4period.png", "./FGMresults/3-4periodFFT.png")
-# FGManalysis([18, 35, 18, 37], "./FGMresults/4-4period.png", "./FGMresults/4-4periodFFT.png")
+pdf = PdfPages("./plotResults.pdf")
+
+FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
+FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
+FGManalysis([18, 33, 18, 37], pdf, "FGM Bx Field Plot - 2/2 Period", "FGM Bx Field FFT - 2/2 Period")
+FGManalysis([18, 29, 18, 31], pdf, "FGM Bx Field Plot - 1/4 Period", "FGM Bx Field FFT - 1/4 Period")
+FGManalysis([18, 31, 18, 33], pdf, "FGM Bx Field Plot - 2/4 Period", "FGM Bx Field FFT - 2/4 Period")
+FGManalysis([18, 33, 18, 35], pdf, "FGM Bx Field Plot - 3/4 Period", "FGM Bx Field FFT - 3/4 Period")
+FGManalysis([18, 35, 18, 37], pdf, "FGM Bx Field Plot - 4/4 Period", "FGM Bx Field FFT - 4/4 Period")
+
+pdf.close()
