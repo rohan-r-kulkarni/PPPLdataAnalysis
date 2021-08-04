@@ -170,12 +170,14 @@ def FGManalysis(period, plotPath, FFTpath):
     plt.grid()
     plt.savefig(FFTpath)
 
+    plt.show()
+
 period = [] #start min, start sec, stop min, stop sec
 
-FGManalysis([18, 29, 18, 37], "./FGMresults/period.png", "./FGMresults/periodFFT.png")
+# FGManalysis([18, 29, 18, 37], "./FGMresults/period.png", "./FGMresults/periodFFT.png")
 FGManalysis([18, 29, 18, 33], "./FGMresults/1-2period.png", "./FGMresults/1-2periodFFT.png")
 FGManalysis([18, 33, 18, 37], "./FGMresults/2-2period.png", "./FGMresults/2-2periodFFT.png")
-FGManalysis([18, 29, 18, 31], "./FGMresults/1-4period.png", "./FGMresults/1-4periodFFT.png")
-FGManalysis([18, 31, 18, 33], "./FGMresults/2-4period.png", "./FGMresults/2-4periodFFT.png")
-FGManalysis([18, 33, 18, 35], "./FGMresults/3-4period.png", "./FGMresults/3-4periodFFT.png")
-FGManalysis([18, 35, 18, 37], "./FGMresults/4-4period.png", "./FGMresults/4-4periodFFT.png")
+# FGManalysis([18, 29, 18, 31], "./FGMresults/1-4period.png", "./FGMresults/1-4periodFFT.png")
+# FGManalysis([18, 31, 18, 33], "./FGMresults/2-4period.png", "./FGMresults/2-4periodFFT.png")
+# FGManalysis([18, 33, 18, 35], "./FGMresults/3-4period.png", "./FGMresults/3-4periodFFT.png")
+# FGManalysis([18, 35, 18, 37], "./FGMresults/4-4period.png", "./FGMresults/4-4periodFFT.png")
