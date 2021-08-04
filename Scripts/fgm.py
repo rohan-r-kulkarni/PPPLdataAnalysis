@@ -150,8 +150,6 @@ def FGManalysis(period, ppObj, title, FFTtitle):
     MMS3xf, MMS3yf, MMS3N = getFFTdata(MMS3x, MMS3y)
     MMS4xf, MMS4yf, MMS4N = getFFTdata(MMS4x, MMS4y)
 
-    ppObj.savefig(fig1)
-
     #FFT
     fig2 = plt.figure(2)
     plt.plot(MMS1xf, 1.0/MMS1N * np.abs(MMS1yf), '-k')
@@ -169,20 +167,28 @@ def FGManalysis(period, ppObj, title, FFTtitle):
     plt.ylim([0, 4])
 
     plt.grid()
-    ppObj.savefig(fig2)
 
-    plt.close()
+    return fig1, fig2
 
 period = [] #start min, start sec, stop min, stop sec
 
 pdf = PdfPages("./plots.pdf")
 
-FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
-FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
-FGManalysis([18, 33, 18, 37], pdf, "FGM Bx Field Plot - 2/2 Period", "FGM Bx Field FFT - 2/2 Period")
+# FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
+fig3, fig4 = FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
+fig5, fig6 = FGManalysis([18, 33, 18, 37], pdf, "FGM Bx Field Plot - 2/2 Period", "FGM Bx Field FFT - 2/2 Period")
 # FGManalysis([18, 29, 18, 31], pdf)
 # FGManalysis([18, 31, 18, 33], pdf)
 # FGManalysis([18, 33, 18, 35], pdf)
 # FGManalysis([18, 35, 18, 37], pdf)
+pdf.savefig(fig3)
+plt.close()
+pdf.savefig(fig4)
+plt.close()
+pdf.savefig(fig5)
+plt.close()
+
+# pdf.savefig(fig6)
+
 
 pdf.close()
