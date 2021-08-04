@@ -122,50 +122,60 @@ def getFFTdata(x, y):
 
     return xf, yf, N
 
-period = [18, 31, 18, 36] #start min/sec, stop min/sec
+def FGManalysis(period, plotPath, FFTpath):
 
-MMS1x, MMS1y = getData(files[0], period)
-MMS2x, MMS2y = getData(files[1], period)
-MMS3x, MMS3y = getData(files[2], period)
-MMS4x, MMS4y = getData(files[3], period)
+    MMS1x, MMS1y = getData(files[0], period)
+    MMS2x, MMS2y = getData(files[1], period)
+    MMS3x, MMS3y = getData(files[2], period)
+    MMS4x, MMS4y = getData(files[3], period)
 
-#Bx-Field
-fig1 = plt.figure(1)
+    #Bx-Field
+    fig1 = plt.figure(1)
 
-s1 = plt.plot(MMS1x , MMS1y, '-k')
-s2 = plt.plot(MMS2x , MMS2y, '-r')
-s3 = plt.plot(MMS3x , MMS3y, '-g')
-s4 = plt.plot(MMS4x , MMS4y, '-b')
+    s1 = plt.plot(MMS1x , MMS1y, '-k')
+    s2 = plt.plot(MMS2x , MMS2y, '-r')
+    s3 = plt.plot(MMS3x , MMS3y, '-g')
+    s4 = plt.plot(MMS4x , MMS4y, '-b')
 
-fig1.autofmt_xdate()
+    fig1.autofmt_xdate()
 
-plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right')
-plt.title("FGM Bx Field Plot")
-plt.xlabel('Epoch')
-plt.ylabel('Bx Field')
+    plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right')
+    plt.title("FGM Bx Field Plot")
+    plt.xlabel('Epoch')
+    plt.ylabel('Bx Field')
 
-MMS1xf, MMS1yf, MMS1N = getFFTdata(MMS1x, MMS1y)
-MMS2xf, MMS2yf, MMS2N = getFFTdata(MMS2x, MMS2y)
-MMS3xf, MMS3yf, MMS3N = getFFTdata(MMS3x, MMS3y)
-MMS4xf, MMS4yf, MMS4N = getFFTdata(MMS4x, MMS4y)
+    MMS1xf, MMS1yf, MMS1N = getFFTdata(MMS1x, MMS1y)
+    MMS2xf, MMS2yf, MMS2N = getFFTdata(MMS2x, MMS2y)
+    MMS3xf, MMS3yf, MMS3N = getFFTdata(MMS3x, MMS3y)
+    MMS4xf, MMS4yf, MMS4N = getFFTdata(MMS4x, MMS4y)
 
+    plt.savefig(plotPath)
 
-#FFT
-fig2 = plt.figure(2)
-plt.plot(MMS1xf, 1.0/MMS1N * np.abs(MMS1yf), '-k')
-plt.plot(MMS2xf, 1.0/MMS2N * np.abs(MMS2yf),'-r')
-plt.plot(MMS3xf, 1.0/MMS3N * np.abs(MMS3yf), '-g')
-plt.plot(MMS4xf, 1.0/MMS4N * np.abs(MMS4yf), '-b')
+    #FFT
+    fig2 = plt.figure(2)
+    plt.plot(MMS1xf, 1.0/MMS1N * np.abs(MMS1yf), '-k')
+    plt.plot(MMS2xf, 1.0/MMS2N * np.abs(MMS2yf),'-r')
+    plt.plot(MMS3xf, 1.0/MMS3N * np.abs(MMS3yf), '-g')
+    plt.plot(MMS4xf, 1.0/MMS4N * np.abs(MMS4yf), '-b')
 
-plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
-plt.title("FGM Bx Field FFT")
-plt.xlabel('Frequency')
-plt.ylabel('Amplitude')
+    plt.legend(labels = ('MMS1', 'MMS2', 'MMS3', 'MMS4'), loc = 'lower right') # legend placed at lower right
+    plt.title("FGM Bx Field FFT")
+    plt.xlabel('Frequency')
+    plt.ylabel('Amplitude')
 
-#set FFT window
-plt.xlim([0, 20])
-plt.ylim([0, 2])
+    #set FFT window
+    plt.xlim([0, 20])
+    plt.ylim([0, 5])
 
-plt.grid()
+    plt.grid()
+    plt.savefig(FFTpath)
 
-plt.show()
+period = [] #start min, start sec, stop min, stop sec
+
+FGManalysis([18, 29, 18, 37], "./FGMresults/period.png", "./FGMresults/periodFFT.png")
+FGManalysis([18, 29, 18, 33], "./FGMresults/1-2period.png", "./FGMresults/1-2periodFFT.png")
+FGManalysis([18, 33, 18, 37], "./FGMresults/2-2period.png", "./FGMresults/2-2periodFFT.png")
+FGManalysis([18, 29, 18, 31], "./FGMresults/1-4period.png", "./FGMresults/1-4periodFFT.png")
+FGManalysis([18, 31, 18, 33], "./FGMresults/2-4period.png", "./FGMresults/2-4periodFFT.png")
+FGManalysis([18, 33, 18, 35], "./FGMresults/3-4period.png", "./FGMresults/3-4periodFFT.png")
+FGManalysis([18, 35, 18, 37], "./FGMresults/4-4period.png", "./FGMresults/4-4periodFFT.png")
