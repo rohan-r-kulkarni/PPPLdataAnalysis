@@ -168,27 +168,21 @@ def FGManalysis(period, ppObj, title, FFTtitle):
 
     plt.grid()
 
-    return fig1, fig2
+    pdf.savefig(fig1)
+    pdf.savefig(fig2)
+    plt.close('all')
+
 
 period = [] #start min, start sec, stop min, stop sec
 
-pdf = PdfPages("./plots.pdf")
+pdf = PdfPages("./plotResults.pdf")
 
-# FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
-fig3, fig4 = FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
-fig5, fig6 = FGManalysis([18, 33, 18, 37], pdf, "FGM Bx Field Plot - 2/2 Period", "FGM Bx Field FFT - 2/2 Period")
-# FGManalysis([18, 29, 18, 31], pdf)
-# FGManalysis([18, 31, 18, 33], pdf)
-# FGManalysis([18, 33, 18, 35], pdf)
-# FGManalysis([18, 35, 18, 37], pdf)
-pdf.savefig(fig3)
-plt.close()
-pdf.savefig(fig4)
-plt.close()
-pdf.savefig(fig5)
-plt.close()
-
-# pdf.savefig(fig6)
-
+FGManalysis([18, 29, 18, 37], pdf, "FGM Bx Field Plot - Full Period", "FGM Bx Field FFT - Full Period")
+FGManalysis([18, 29, 18, 33], pdf, "FGM Bx Field Plot - 1/2 Period", "FGM Bx Field FFT - 1/2 Period")
+FGManalysis([18, 33, 18, 37], pdf, "FGM Bx Field Plot - 2/2 Period", "FGM Bx Field FFT - 2/2 Period")
+FGManalysis([18, 29, 18, 31], pdf, "FGM Bx Field Plot - 1/4 Period", "FGM Bx Field FFT - 1/4 Period")
+FGManalysis([18, 31, 18, 33], pdf, "FGM Bx Field Plot - 2/4 Period", "FGM Bx Field FFT - 2/4 Period")
+FGManalysis([18, 33, 18, 35], pdf, "FGM Bx Field Plot - 3/4 Period", "FGM Bx Field FFT - 3/4 Period")
+FGManalysis([18, 35, 18, 37], pdf, "FGM Bx Field Plot - 4/4 Period", "FGM Bx Field FFT - 4/4 Period")
 
 pdf.close()
