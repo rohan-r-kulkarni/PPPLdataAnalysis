@@ -3,7 +3,7 @@
 #Will take a while to run. Use Ctrl-C to kill the program.
 import cdflib
 import numpy as np
-file = cdflib.CDF("./example.cdf")
+file = cdflib.CDF("../20170810data/mms4/edp/mms4_edp_brst_l2_dce_20170810121733_v3.0.0.cdf")
 rData = []
 zData = [] #Each variable is a list, containing indexes for each record. The variable lists are each indexes in the zData[] list.
 txt = open("./output.txt", "w")
