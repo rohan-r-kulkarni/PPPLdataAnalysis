@@ -1,140 +1,140 @@
-FGM |B| Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
-13919.625359341255
-FGM |B| Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
-1160.666533517052
+FGM |B| Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+111302.53918243911
+FGM |B| Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+9285.332268136415
 Ratio of < LH Freq. to > LH Freq.
-11.992786004746776
+11.986920442727222
 
-FGM |B| Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
-8650.545074348263
-FGM |B| Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
-269.90558940906976
+FGM |B| Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+17284.37226528864
+FGM |B| Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+539.8111788181395
 Ratio of < LH Freq. to > LH Freq.
-32.05026280962811
+32.01929293708029
 
-FGM |B| Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
-12540.534995258446
-FGM |B| Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
-3485.621958218421
+FGM |B| Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+24837.76279980296
+FGM |B| Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+6971.243916436842
 Ratio of < LH Freq. to > LH Freq.
-3.597789761936258
+3.5628882158663724
 
-FGM |B| Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
-8958.424576484633
-FGM |B| Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
-2526.3842520749404
+FGM |B| Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+17743.10407378788
+FGM |B| Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+5052.768504149881
 Ratio of < LH Freq. to > LH Freq.
-3.545946967143658
+3.5115608520784836
 
-FGM |B| Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
-9606.743886858292
-FGM |B| Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
-672.4905775782739
+FGM |B| Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+19169.89975383627
+FGM |B| Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+1344.9811551565479
 Ratio of < LH Freq. to > LH Freq.
-14.285321173500195
+14.252913269706747
 
-FGM Bx Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
-10522.417222228263
-FGM Bx Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
-940.8199460035391
+FGM Bx Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+84139.31136060104
+FGM Bx Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+7526.559568028313
 Ratio of < LH Freq. to > LH Freq.
-11.184304995792129
+11.178986972748095
 
-FGM Bx Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
-6610.635458100268
-FGM Bx Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
-463.966328267746
+FGM Bx Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+13189.190129789005
+FGM Bx Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+927.932656535492
 Ratio of < LH Freq. to > LH Freq.
-14.248093138098154
+14.213520816297017
 
-FGM Bx Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
-7425.794370679158
-FGM Bx Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
-1980.9312521278885
+FGM Bx Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+14715.629790166757
+FGM Bx Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+3961.862504255777
 Ratio of < LH Freq. to > LH Freq.
-3.748638102762261
+3.7143211745383478
 
-FGM Bx Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
-7121.417759662749
-FGM Bx Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
-2106.1879306896917
+FGM Bx Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+14098.82248898556
+FGM Bx Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+4212.375861379383
 Ratio of < LH Freq. to > LH Freq.
-3.3811881911842363
+3.3470001141751777
 
-FGM Bx Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
-7957.200439511616
-FGM Bx Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
-567.175237963685
+FGM Bx Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+15878.724132260179
+FGM Bx Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+1134.35047592737
 Ratio of < LH Freq. to > LH Freq.
-14.02952721998258
+13.998075964378453
 
-FGM By Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
-4865.120041539802
-FGM By Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
-573.4207813152955
+FGM By Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+38899.356227533994
+FGM By Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+4587.366250522364
 Ratio of < LH Freq. to > LH Freq.
-8.484380406270478
+8.4796709273223
 
-FGM By Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
-4103.874055859544
-FGM By Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
-552.5184244801546
+FGM By Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+8164.330587740328
+FGM By Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+1105.0368489603093
 Ratio of < LH Freq. to > LH Freq.
-7.427578654450729
+7.388288087788079
 
-FGM By Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
-5051.466672226858
-FGM By Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
-1454.3680751590196
+FGM By Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+10002.157406592572
+FGM By Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+2908.736150318039
 Ratio of < LH Freq. to > LH Freq.
-3.473306901125792
+3.438660947469898
 
-FGM By Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
-2137.67495648529
-FGM By Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
-482.20390559676537
+FGM By Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+4245.70306343158
+FGM By Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+964.4078111935307
 Ratio of < LH Freq. to > LH Freq.
-4.433134886868551
+4.4023938982588575
 
-FGM By Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
-2109.285682808986
-FGM By Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
-211.47028893976903
+FGM By Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+4208.989747407875
+FGM By Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+422.94057787953807
 Ratio of < LH Freq. to > LH Freq.
-9.974383131475046
+9.951728369290402
 
-FGM Bz Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
-680.8705684608473
-FGM Bz Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
-173.6831210169097
+FGM Bz Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+5435.541479101368
+FGM Bz Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+1389.4649681352776
 Ratio of < LH Freq. to > LH Freq.
-3.920188470096401
+3.911967270679808
 
-FGM Bz Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
-463.16785967773666
-FGM Bz Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
-86.20657003868841
+FGM Bz Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+920.7140504436964
+FGM Bz Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+172.41314007737682
 Ratio of < LH Freq. to > LH Freq.
-5.3727675218938975
+5.3401617187094415
 
-FGM Bz Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
-263.26478147689454
-FGM Bz Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
-106.62000212994174
+FGM Bz Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+519.822769256584
+FGM Bz Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+213.24000425988348
 Ratio of < LH Freq. to > LH Freq.
-2.46918754659228
+2.4377356915781
 
-FGM Bz Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
-108.37160400719047
-FGM Bz Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
-50.982882323951365
+FGM Bz Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+216.16856244478228
+FGM Bz Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+101.96576464790273
 Ratio of < LH Freq. to > LH Freq.
-2.125646865522123
+2.120011193867201
 
-FGM Bz Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
-33.37375752040619
-FGM Bz Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
-11.020133108433429
+FGM Bz Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+66.29265155215232
+FGM Bz Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+22.040266216866858
 Ratio of < LH Freq. to > LH Freq.
-3.0284350644427422
+3.007797224401048
 
