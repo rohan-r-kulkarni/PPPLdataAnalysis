@@ -1,0 +1,140 @@
+FGM |B| Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
+13919.625359341255
+FGM |B| Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
+1160.666533517052
+Ratio of < LH Freq. to > LH Freq.
+11.992786004746776
+
+FGM |B| Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
+8650.545074348263
+FGM |B| Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
+269.90558940906976
+Ratio of < LH Freq. to > LH Freq.
+32.05026280962811
+
+FGM |B| Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
+12540.534995258446
+FGM |B| Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
+3485.621958218421
+Ratio of < LH Freq. to > LH Freq.
+3.597789761936258
+
+FGM |B| Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
+8958.424576484633
+FGM |B| Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
+2526.3842520749404
+Ratio of < LH Freq. to > LH Freq.
+3.545946967143658
+
+FGM |B| Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
+9606.743886858292
+FGM |B| Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
+672.4905775782739
+Ratio of < LH Freq. to > LH Freq.
+14.285321173500195
+
+FGM Bx Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
+10522.417222228263
+FGM Bx Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
+940.8199460035391
+Ratio of < LH Freq. to > LH Freq.
+11.184304995792129
+
+FGM Bx Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
+6610.635458100268
+FGM Bx Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
+463.966328267746
+Ratio of < LH Freq. to > LH Freq.
+14.248093138098154
+
+FGM Bx Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
+7425.794370679158
+FGM Bx Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
+1980.9312521278885
+Ratio of < LH Freq. to > LH Freq.
+3.748638102762261
+
+FGM Bx Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
+7121.417759662749
+FGM Bx Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
+2106.1879306896917
+Ratio of < LH Freq. to > LH Freq.
+3.3811881911842363
+
+FGM Bx Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
+7957.200439511616
+FGM Bx Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
+567.175237963685
+Ratio of < LH Freq. to > LH Freq.
+14.02952721998258
+
+FGM By Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
+4865.120041539802
+FGM By Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
+573.4207813152955
+Ratio of < LH Freq. to > LH Freq.
+8.484380406270478
+
+FGM By Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
+4103.874055859544
+FGM By Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
+552.5184244801546
+Ratio of < LH Freq. to > LH Freq.
+7.427578654450729
+
+FGM By Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
+5051.466672226858
+FGM By Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
+1454.3680751590196
+Ratio of < LH Freq. to > LH Freq.
+3.473306901125792
+
+FGM By Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
+2137.67495648529
+FGM By Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
+482.20390559676537
+Ratio of < LH Freq. to > LH Freq.
+4.433134886868551
+
+FGM By Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
+2109.285682808986
+FGM By Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
+211.47028893976903
+Ratio of < LH Freq. to > LH Freq.
+9.974383131475046
+
+FGM Bz Field FFT - Full Period Signal Power (B^2)Hz; < LH Freq.
+680.8705684608473
+FGM Bz Field FFT - Full Period Signal Power (B^2)Hz; > LH Freq.
+173.6831210169097
+Ratio of < LH Freq. to > LH Freq.
+3.920188470096401
+
+FGM Bz Field FFT - 1/4 Period Signal Power (B^2)Hz; < LH Freq.
+463.16785967773666
+FGM Bz Field FFT - 1/4 Period Signal Power (B^2)Hz; > LH Freq.
+86.20657003868841
+Ratio of < LH Freq. to > LH Freq.
+5.3727675218938975
+
+FGM Bz Field FFT - 2/4 Period Signal Power (B^2)Hz; < LH Freq.
+263.26478147689454
+FGM Bz Field FFT - 2/4 Period Signal Power (B^2)Hz; > LH Freq.
+106.62000212994174
+Ratio of < LH Freq. to > LH Freq.
+2.46918754659228
+
+FGM Bz Field FFT - 3/4 Period Signal Power (B^2)Hz; < LH Freq.
+108.37160400719047
+FGM Bz Field FFT - 3/4 Period Signal Power (B^2)Hz; > LH Freq.
+50.982882323951365
+Ratio of < LH Freq. to > LH Freq.
+2.125646865522123
+
+FGM Bz Field FFT - 4/4 Period Signal Power (B^2)Hz; < LH Freq.
+33.37375752040619
+FGM Bz Field FFT - 4/4 Period Signal Power (B^2)Hz; > LH Freq.
+11.020133108433429
+Ratio of < LH Freq. to > LH Freq.
+3.0284350644427422
+
