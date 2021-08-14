@@ -1,139 +1,139 @@
-FGM |E| Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+FGM |E| Field FFT - Full Period Signal Power (mV^2); < LH Freq.
 72326827.39316615
-FGM |E| Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+FGM |E| Field FFT - Full Period Signal Power (mV^2); > LH Freq.
 34156174.21456142
 Ratio of < LH Freq. to > LH Freq.
 2.117533039233998
 
-FGM |E| Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+FGM |E| Field FFT - 1/4 Period Signal Power (mV^2); < LH Freq.
 1166492.0311558638
-FGM |E| Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+FGM |E| Field FFT - 1/4 Period Signal Power (mV^2); > LH Freq.
 539282.0548410327
 Ratio of < LH Freq. to > LH Freq.
 2.1630462587888584
 
-FGM |E| Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+FGM |E| Field FFT - 2/4 Period Signal Power (mV^2); < LH Freq.
 6240678.230507516
-FGM |E| Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+FGM |E| Field FFT - 2/4 Period Signal Power (mV^2); > LH Freq.
 3026255.3166577206
 Ratio of < LH Freq. to > LH Freq.
 2.062178361540193
 
-FGM |E| Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+FGM |E| Field FFT - 3/4 Period Signal Power (mV^2); < LH Freq.
 7932501.679955438
-FGM |E| Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+FGM |E| Field FFT - 3/4 Period Signal Power (mV^2); > LH Freq.
 4851957.250226837
 Ratio of < LH Freq. to > LH Freq.
 1.6349075787064242
 
-FGM |E| Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+FGM |E| Field FFT - 4/4 Period Signal Power (mV^2); < LH Freq.
 15277614.682238178
-FGM |E| Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+FGM |E| Field FFT - 4/4 Period Signal Power (mV^2); > LH Freq.
 6446294.137291011
 Ratio of < LH Freq. to > LH Freq.
 2.3699841113142934
 
-FGM Ex Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+FGM Ex Field FFT - Full Period Signal Power (mV^2); < LH Freq.
 3664211.781047139
-FGM Ex Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+FGM Ex Field FFT - Full Period Signal Power (mV^2); > LH Freq.
 2640993.262207374
 Ratio of < LH Freq. to > LH Freq.
 1.3874370046610973
 
-FGM Ex Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ex Field FFT - 1/4 Period Signal Power (mV^2); < LH Freq.
 225912.98017486316
-FGM Ex Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ex Field FFT - 1/4 Period Signal Power (mV^2); > LH Freq.
 147530.17803562398
 Ratio of < LH Freq. to > LH Freq.
 1.5313001257296128
 
-FGM Ex Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ex Field FFT - 2/4 Period Signal Power (mV^2); < LH Freq.
 406155.41409578844
-FGM Ex Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ex Field FFT - 2/4 Period Signal Power (mV^2); > LH Freq.
 268727.9100269896
 Ratio of < LH Freq. to > LH Freq.
 1.5114001893402005
 
-FGM Ex Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ex Field FFT - 3/4 Period Signal Power (mV^2); < LH Freq.
 497157.5267380313
-FGM Ex Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ex Field FFT - 3/4 Period Signal Power (mV^2); > LH Freq.
 367843.8868336049
 Ratio of < LH Freq. to > LH Freq.
 1.351544893181606
 
-FGM Ex Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ex Field FFT - 4/4 Period Signal Power (mV^2); < LH Freq.
 585454.9289220903
-FGM Ex Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ex Field FFT - 4/4 Period Signal Power (mV^2); > LH Freq.
 421991.6612710374
 Ratio of < LH Freq. to > LH Freq.
 1.3873613690818016
 
-FGM Ey Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+FGM Ey Field FFT - Full Period Signal Power (mV^2); < LH Freq.
 17065189.750604637
-FGM Ey Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+FGM Ey Field FFT - Full Period Signal Power (mV^2); > LH Freq.
 9158876.208737148
 Ratio of < LH Freq. to > LH Freq.
 1.8632405724978822
 
-FGM Ey Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ey Field FFT - 1/4 Period Signal Power (mV^2); < LH Freq.
 254679.86868094135
-FGM Ey Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ey Field FFT - 1/4 Period Signal Power (mV^2); > LH Freq.
 163049.80462372347
 Ratio of < LH Freq. to > LH Freq.
 1.5619759206009245
 
-FGM Ey Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ey Field FFT - 2/4 Period Signal Power (mV^2); < LH Freq.
 1640396.4710896092
-FGM Ey Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ey Field FFT - 2/4 Period Signal Power (mV^2); > LH Freq.
 876277.6828981133
 Ratio of < LH Freq. to > LH Freq.
 1.872005305058467
 
-FGM Ey Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ey Field FFT - 3/4 Period Signal Power (mV^2); < LH Freq.
 1981125.9037416563
-FGM Ey Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ey Field FFT - 3/4 Period Signal Power (mV^2); > LH Freq.
 1152776.4932530783
 Ratio of < LH Freq. to > LH Freq.
 1.7185689640070791
 
-FGM Ey Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ey Field FFT - 4/4 Period Signal Power (mV^2); < LH Freq.
 3320210.2015105486
-FGM Ey Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ey Field FFT - 4/4 Period Signal Power (mV^2); > LH Freq.
 1644140.473246145
 Ratio of < LH Freq. to > LH Freq.
 2.019420028603285
 
-FGM Ez Field FFT - Full Period Signal Power (nT^2); < LH Freq.
+FGM Ez Field FFT - Full Period Signal Power (mV^2); < LH Freq.
 59380918.93146007
-FGM Ez Field FFT - Full Period Signal Power (nT^2); > LH Freq.
+FGM Ez Field FFT - Full Period Signal Power (mV^2); > LH Freq.
 28699445.84978441
 Ratio of < LH Freq. to > LH Freq.
 2.069061515761153
 
-FGM Ez Field FFT - 1/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ez Field FFT - 1/4 Period Signal Power (mV^2); < LH Freq.
 913657.8930712526
-FGM Ez Field FFT - 1/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ez Field FFT - 1/4 Period Signal Power (mV^2); > LH Freq.
 408856.0287213921
 Ratio of < LH Freq. to > LH Freq.
 2.234669000548966
 
-FGM Ez Field FFT - 2/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ez Field FFT - 2/4 Period Signal Power (mV^2); < LH Freq.
 4689475.675083669
-FGM Ez Field FFT - 2/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ez Field FFT - 2/4 Period Signal Power (mV^2); > LH Freq.
 2350927.0507807108
 Ratio of < LH Freq. to > LH Freq.
 1.9947346615992863
 
-FGM Ez Field FFT - 3/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ez Field FFT - 3/4 Period Signal Power (mV^2); < LH Freq.
 6124348.897265617
-FGM Ez Field FFT - 3/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ez Field FFT - 3/4 Period Signal Power (mV^2); > LH Freq.
 3930419.71809226
 Ratio of < LH Freq. to > LH Freq.
 1.5581920854595759
 
-FGM Ez Field FFT - 4/4 Period Signal Power (nT^2); < LH Freq.
+FGM Ez Field FFT - 4/4 Period Signal Power (mV^2); < LH Freq.
 12644600.869018655
-FGM Ez Field FFT - 4/4 Period Signal Power (nT^2); > LH Freq.
+FGM Ez Field FFT - 4/4 Period Signal Power (mV^2); > LH Freq.
 5549104.950006452
 Ratio of < LH Freq. to > LH Freq.
 2.2786739452466027
